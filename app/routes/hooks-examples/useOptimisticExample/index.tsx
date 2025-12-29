@@ -1,6 +1,16 @@
-import { useRef, useState } from "react";
+import TodoApp from "./TodoApp";
+
+const initialTodos = [
+  {
+    id: "1",
+    title: "first",
+  },
+  {
+    id: "2",
+    title: "second",
+  },
+];
 
 export default function UseOptimisticExample() {
-  const [todos, setTodos] = useState<string[]>([]);
-  const inputRef = useRef<HTMLInputElement>(null);
+  return <TodoApp initialTodos={initialTodos} />;
 }
