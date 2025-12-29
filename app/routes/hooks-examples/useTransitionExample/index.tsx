@@ -1,32 +1,44 @@
 import { useState, useTransition, type ChangeEvent } from "react";
-
-const LIST_SIZE = 30000;
+import { users } from "./users";
 
 export default function UseTransitionExample() {
   const [isPending, startTransition] = useTransition();
-  const [input, setInput] = useState("");
-  const [list, setList] = useState<string[]>([]);
+  const [username, setUserName] = useState("");
+  const [userList, setUserList] = useState<string[]>([]);
 
   function onChange(e: ChangeEvent<HTMLInputElement>) {
-    setInput(e.target.value);
+    setUserName(e.target.value);
+
+    if (!e.target.value) {
+      setUserList([]);
+
+      return;
+    }
 
     startTransition(() => {
-      const l = [];
-
-      for (let i = 0; i < LIST_SIZE; i++) {
-        l.push(e.target.value);
-      }
-
-      setList(l);
+      setUserList(users.filter((user) => user.includes(e.target.value)));
     });
   }
 
   return (
     <>
-      <input type="text" name="input" value={input} onChange={onChange} />
-      {isPending
-        ? "Loading..."
-        : list.map((item, index) => <div key={index}>{item}</div>)}
+      <label>
+        User Name:
+        <input
+          placeholder="search a name ..."
+          type="text"
+          name="username"
+          id="username"
+          value={username}
+          onChange={onChange}
+          autoFocus
+        />
+      </label>
+      <ul>
+        {isPending
+          ? "Loading..."
+          : userList.map((user, index) => <li key={index}>{user}</li>)}
+      </ul>
     </>
   );
 }
