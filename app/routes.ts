@@ -10,4 +10,12 @@ export default [
     "hooks-examples/useOptimisticExample",
     "routes/hooks-examples/useOptimisticExample/index.tsx"
   ),
+  route(
+    "hooks-examples/useDeferredValueExample",
+    "routes/hooks-examples/useDeferredValueExample/index.tsx"
+  ),
+  route(
+    "apis-examples/prefetchDNSExample",
+    "routes/apis-examples/prefetchDnsExample/index.tsx"
+  ),
 ] satisfies RouteConfig;
