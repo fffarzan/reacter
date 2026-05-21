@@ -1,21 +1,15 @@
-import { type RouteConfig, index, route } from "@react-router/dev/routes";
+import { type RouteConfig, index, route } from '@react-router/dev/routes';
 
 export default [
-  index("routes/home.tsx"),
-  route(
-    "hooks-examples/useTransitionExample",
-    "routes/hooks-examples/useTransitionExample/index.tsx"
-  ),
-  route(
-    "hooks-examples/useOptimisticExample",
-    "routes/hooks-examples/useOptimisticExample/index.tsx"
-  ),
-  route(
-    "hooks-examples/useDeferredValueExample",
-    "routes/hooks-examples/useDeferredValueExample/index.tsx"
-  ),
-  route(
-    "apis-examples/prefetchDNSExample",
-    "routes/apis-examples/prefetchDnsExample/index.tsx"
-  ),
+    index('routes/home.tsx'),
+
+    route('hooks-examples/transition', 'routes/hooks-examples/Transition/index.tsx'),
+    route('hooks-examples/optimistic', 'routes/hooks-examples/Optimistic/index.tsx'),
+    route('hooks-examples/deferred-value', 'routes/hooks-examples/DeferredValue/index.tsx'),
+    route('hooks-examples/callback', 'routes/hooks-examples/Callback/index.tsx'),
+    route('hooks-examples/layout-effect', 'routes/hooks-examples/LayoutEffect/index.tsx'),
+
+    route('apis-examples/prefetchDNSExample', 'routes/apis-examples/prefetchDnsExample/index.tsx'),
+
+    route('infinite-scroll/from-scratch', 'routes/infinite-scroll/from-scratch/index.tsx'),
 ] satisfies RouteConfig;
