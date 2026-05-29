@@ -17,4 +17,6 @@ export default [
         'rendering/parent-child-rendering-priority',
         'routes/rendering/parent-child-rendering-priority/index.tsx',
     ),
+
+    route('fff-hooks/playground', 'fff-hooks/playground/index.tsx'),
 ] satisfies RouteConfig;
