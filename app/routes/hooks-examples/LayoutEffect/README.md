@@ -27,3 +27,5 @@ Usually, components that rely on layout information don’t need to render on th
 
 Replace useLayoutEffect with useEffect. This tells React that it’s okay to display the initial render result without blocking the paint (because the original HTML will become visible before your Effect runs).
 Alternatively, you can render a component with useLayoutEffect only after hydration.
+
+https://www.greatfrontend.com/questions/quiz/what-is-the-difference-between-useeffect-and-uselayouteffect-in-react

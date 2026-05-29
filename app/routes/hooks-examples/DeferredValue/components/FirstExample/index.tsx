@@ -3,7 +3,7 @@ import { SlowList } from './SlowList';
 
 export default function FirstExample() {
     const [text, setText] = useState('');
-    const deferredText = useDeferredValue(text);
+    const deferredText = useDeferredValue(text, 'loading...');
 
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value);

@@ -63,3 +63,18 @@ https://www.zignuts.com/blog/infinite-scroll-in-react#:~:text=Infinite%20Scroll%
 ## Hooks
 
 - https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e
+
+# XXX
+
+⚡ React Performance Optimization – Interview Questions
+
+1. How do you identify unnecessary re-renders?
+2. When should you use code splitting?
+3. How does lazy loading work in React?
+4. What are the trade-offs of memoization?
+5. How does React handle large lists efficiently?
+6. Difference between virtualization and pagination
+7. How would you optimize a slow React application?
+8. How does key selection impact performance?
+9. What happens if keys change between renders?
+10. How does React Strict Mode affect performance?
