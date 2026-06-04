@@ -64,3 +64,7 @@ https://www.greatfrontend.com/questions/quiz/how-would-one-optimize-the-performa
 - https://www.greatfrontend.com/questions/quiz/why-does-react-recommend-against-mutating-state
 
 - https://www.greatfrontend.com/questions/quiz/what-is-the-difference-between-react-node-react-element-and-a-react-component
+
+### re-render
+
+- https://www.developerway.com/posts/react-re-renders-guide#part3

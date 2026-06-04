@@ -78,3 +78,7 @@ https://www.zignuts.com/blog/infinite-scroll-in-react#:~:text=Infinite%20Scroll%
 8. How does key selection impact performance?
 9. What happens if keys change between renders?
 10. How does React Strict Mode affect performance?
+
+# NOTE
+
+- React.memo: it’s a higher-order component supplied by React.

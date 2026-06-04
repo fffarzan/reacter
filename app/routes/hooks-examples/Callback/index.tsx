@@ -1,11 +1,21 @@
-import { useCallback } from 'react';
+import { useState } from 'react';
+import Product from './components/Product';
 
 export default function Page() {
-    const cb = useCallback(() => console.log('call callback'), []);
+    const [isDark, setIsDark] = useState(false);
 
-    const loop = () => {
-        cb();
-    };
-
-    return <button onClick={loop}>trigger loop</button>;
+    return (
+        <>
+            <label>
+                <input
+                    type="checkbox"
+                    checked={isDark}
+                    onChange={(e) => setIsDark(e.target.checked)}
+                />
+                Dark mode
+            </label>
+            <hr />
+            <Product referrerId="wizard_of_oz" productId="123" theme={isDark ? 'dark' : 'light'} />
+        </>
+    );
 }
