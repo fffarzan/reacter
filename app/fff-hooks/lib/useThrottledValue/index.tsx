@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function useThrottle(text: string, delay: number) {
+export default function useThrottledValue(text: string, delay: number) {
     const [throttledText, setThrottledText] = useState(text);
     const lastExeTime = useRef(Date.now());
 

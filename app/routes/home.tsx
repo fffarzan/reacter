@@ -32,6 +32,9 @@ export default function Home() {
                     <li>
                         <Link to="apis-examples/prefetchDNSExample">prefetchDNS example</Link>
                     </li>
+                    <li>
+                        <Link to="apis-examples/suspense">Suspense example</Link>
+                    </li>
                 </ul>
             </section>
             <section>

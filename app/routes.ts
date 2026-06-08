@@ -11,6 +11,7 @@ export default [
     route('hooks-examples/context', 'routes/hooks-examples/Context/index.tsx'),
 
     route('apis-examples/prefetchDNSExample', 'routes/apis-examples/prefetchDnsExample/index.tsx'),
+    route('apis-examples/suspense', 'routes/apis-examples/suspense/index.tsx'),
 
     route('infinite-scroll/from-scratch', 'routes/infinite-scroll/from-scratch/index.tsx'),
     route(
