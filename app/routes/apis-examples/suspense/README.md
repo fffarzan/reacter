@@ -23,5 +23,36 @@ Suspense boundaries let you coordinate which parts of your UI should always “p
 
 Transitions mark the whole update as non-urgent so they are typically used by frameworks and router libraries for navigation. Deferred values, on the other hand, are mostly useful in application code where you want to mark a part of UI as non-urgent and let it “lag behind” the rest of the UI.
 
+### Suspense in routing
+
+- Preventing already revealed content from hiding (that was hard to implement)
+- Resetting Suspense boundaries on navigation
+
+Suspense-enabled routers are expected to wrap the navigation updates into Transitions by default.
+
+### fallback server error
+
+If a component throws an error on the server, React will not abort the server render. Instead, it will find the closest `<Suspense>` component above it and include its fallback. On the client, React will attempt to render the same component again. If it errors on the client too, React will throw the error and display the closest Error Boundary.
+
+To make the server throw the error we can manage error in server rendering. The server HTML will include the Loading:
+
+```jsx
+<Suspense fallback={<Loading />}>
+    <Chat />
+</Suspense>;
+
+function Chat() {
+    // The error that is handeled in the server and client shows the Loading.
+    if (typeof window === 'undefined') {
+        throw Error('Chat should only render on the client.');
+    }
+    // ...
+}
+```
+
+How do I prevent the UI from being replaced by a fallback during an update? This can happen when an update causes a component to suspend, and the nearest Suspense boundary is already showing content to the user. Solution: `startTransition` especially with routers. The router should be integrated with Suspense and `startTransition`.
+
+### continue
+
 - https://github.com/reactwg/react-18/discussions/37
 - https://www.youtube.com/watch?v=pj5N-Khihgc
