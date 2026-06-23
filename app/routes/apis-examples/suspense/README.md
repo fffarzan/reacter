@@ -73,5 +73,6 @@ The router should be integrated with `<Suspense>` and `startTransition`.
 
 ### continue
 
-- https://github.com/reactwg/react-18/discussions/37
-- https://www.youtube.com/watch?v=pj5N-Khihgc
+- [https://github.com/reactwg/react-18/discussions/37](https://github.com/reactwg/react-18/discussions/37)
+- [https://www.youtube.com/watch?v=pj5N-Khihgc](https://www.youtube.com/watch?v=pj5N-Khihgc)
+
