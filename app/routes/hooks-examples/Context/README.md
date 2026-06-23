@@ -6,7 +6,9 @@ It would be great if there were a way to “teleport” data to the components i
 
 ## How it works
 
-Like CSS property inheritance. In CSS, we set `color: blue` for a `<div>`, and any DOM node inside of it, unless some other DOM node in the middle overrides it with `color: green`. Similarly, in React, the only way to override some context coming from above is to wrap children into a context provider with a different value. So nested components can override context (with heading levels).
+Like CSS property inheritance.
+
+In CSS, we set `color: blue` for a `<div>`, and any DOM node inside of it, unless some other DOM node in the middle overrides it with `color: green`. Similarly, in React, the only way to override some context coming from above is to wrap children into a context provider with a different value. So nested components can override context (with heading levels).
 
 - Different React contexts don’t override each other.
 - The returned value is always up-to-date. React automatically re-renders components that read some context if it changes. This is why context is often used in combination with state.
@@ -59,3 +61,4 @@ function Button() {
 - [passing data deeply with context](https://react.dev/learn/passing-data-deeply-with-context#context-passes-through-intermediate-components)
 - [what are some pitfalls about using context in react](https://www.greatfrontend.com/questions/quiz/what-are-some-pitfalls-about-using-context-in-react)
 - [createContext](https://react.dev/reference/react/createContext)
+
