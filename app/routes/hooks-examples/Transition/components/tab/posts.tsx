@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-const PostsTab = memo(() => {
+const Posts = memo(() => {
     console.log('[ARTIFICIALLY SLOW] Rendering 500 <SlowPost />'); // logs once
 
     let items = [];
@@ -20,4 +20,4 @@ function SlowPost({ index }: { index: number }) {
     return <li className="item">Post #{index + 1}</li>;
 }
 
-export default PostsTab;
+export default Posts;

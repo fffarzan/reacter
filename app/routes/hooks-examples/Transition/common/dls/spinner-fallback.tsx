@@ -1,3 +1,3 @@
-export default function BigSpinner() {
+export function SpinnerFallback() {
     return <h2>🌀 Loading...</h2>;
 }

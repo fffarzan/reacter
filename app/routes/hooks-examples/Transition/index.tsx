@@ -1,19 +1,10 @@
 // import { useState, useTransition, type ChangeEvent } from 'react';
 // import { users } from './users';
 
-import { Suspense, useState, useTransition } from 'react';
-import Item from './components/item';
-import Total from './components/total';
-import { putQuantityApi } from './api';
-import TabButton from './components/tab-button';
-import ContactTab from './components/contact-tab';
-import PostsTab from './components/posts-tab';
-import AboutTab from './components/about-tab';
+import { Suspense } from 'react';
 import './styles.css';
-import BigSpinner from './components/big-spinner';
 import Router from './components/router';
-import AddCommentButton from './components/add-comment-botton';
-import { ErrorBoundary } from 'react-error-boundary';
+import { SpinnerFallback } from './common/dls';
 
 export default function Page() {
     // const [isPending, startTransition] = useTransition();
@@ -50,63 +41,10 @@ export default function Page() {
     //         </ul>
     //     </>
     // );
-    const [quantity, setQuantity] = useState(1);
-    const [isPending, startTransition] = useTransition();
-    const [tab, setTab] = useState('about');
-
-    // A common solution to this problem is to prevent the user from making changes while the quantity is updating. but it's not UX friendly, makes the app feel slow.
-
-    const updateQuantityAction = async (newQuantity: number) => {
-        startTransition(async () => {
-            const savedQuantity = await putQuantityApi(newQuantity);
-
-            // To access the pending state of a transition, call startTransition again.
-            startTransition(() => {
-                setQuantity(savedQuantity);
-            });
-        });
-    };
 
     return (
-        <>
-            <h1>Checkout</h1>
-            <Item action={updateQuantityAction} />
-            <hr />
-            <Total quantity={quantity} isPending={isPending} />
-
-            <hr />
-            <hr />
-            <hr />
-
-            <TabButton isActive={tab === 'about'} action={() => setTab('about')}>
-                About
-            </TabButton>
-            <TabButton isActive={tab === 'posts'} action={() => setTab('posts')}>
-                Posts (slow)
-            </TabButton>
-            <TabButton isActive={tab === 'contact'} action={() => setTab('contact')}>
-                Contact
-            </TabButton>
-            <hr />
-            {tab === 'about' && <AboutTab />}
-            {tab === 'posts' && <PostsTab />}
-            {tab === 'contact' && <ContactTab />}
-
-            <br />
-            <br />
-            <br />
-
-            <Suspense fallback={<BigSpinner />}>
-                <Router />
-            </Suspense>
-
-            <br />
-            <br />
-            <br />
-
-            <ErrorBoundary fallback={<p>⚠️Something went wrong</p>}>
-                <AddCommentButton />
-            </ErrorBoundary>
-        </>
+        <Suspense fallback={<SpinnerFallback />}>
+            <Router />
+        </Suspense>
     );
 }

@@ -4,7 +4,7 @@ export type LayoutProps = PropsWithChildren<{
     isPending: boolean;
 }>;
 
-export default function Layout({ children, isPending }: LayoutProps) {
+export function Layout({ children, isPending }: LayoutProps) {
     return (
         <div className="layout">
             <section

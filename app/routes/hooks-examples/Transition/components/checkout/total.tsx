@@ -1,4 +1,4 @@
-import { intlUsd } from '../utils/price-format';
+import { intlUsd } from '../../common/utils/price-format';
 
 export type TotalProps = {
     quantity: number;

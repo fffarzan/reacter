@@ -1,4 +1,4 @@
-export default function ContactTab() {
+export default function Contact() {
     return (
         <>
             <p>You can find me online here:</p>

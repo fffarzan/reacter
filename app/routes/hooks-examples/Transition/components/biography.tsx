@@ -1,5 +1,5 @@
 import { use } from 'react';
-import { fetchData } from '../api/data';
+import { fetchData } from '../api';
 
 export type BiographyProps = {
     artistId: string;
